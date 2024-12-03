@@ -1,6 +1,8 @@
 package com.example.googlemapproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         // 툴바 설정 설정
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.ic_gmap);
-        getSupportActionBar().setTitle("YW's GoogleMap App");
+        getSupportActionBar().setTitle("YW's GoogleMap");
 
         // 바텀 네비바 설정
         bottomNavigationView = findViewById(R.id.bottom_navigation_view);
