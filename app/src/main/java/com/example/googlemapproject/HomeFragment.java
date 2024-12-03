@@ -4,6 +4,9 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -18,6 +21,12 @@ import com.google.android.gms.maps.SupportMapFragment;
 public class HomeFragment extends Fragment implements OnMapReadyCallback {
     private GoogleMap mMap;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1000;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true); // Enable options menu in fragment
+    }
 
     @Nullable
     @Override
@@ -55,13 +64,36 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
                 Toast.makeText(requireContext(),
                         "현재 위치: " + location.getLatitude() + ", " + location.getLongitude(),
                         Toast.LENGTH_LONG).show();
-                return;
+                //return false;
             });
             mMap.setOnMyLocationButtonClickListener(() -> {
                 Toast.makeText(requireContext(), "현재 위치로 이동합니다", Toast.LENGTH_SHORT).show();
                 return false;
             });
         }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_map, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.itemNone) {
+            mMap.setMapType(GoogleMap.MAP_TYPE_NONE);
+        } else if (itemId == R.id.itemNormal) {
+            mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        } else if (itemId == R.id.itemHybrid) {
+            mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        } else if (itemId == R.id.itemSatellite) {
+            mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        } else if (itemId == R.id.itemTerrain) {
+            mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

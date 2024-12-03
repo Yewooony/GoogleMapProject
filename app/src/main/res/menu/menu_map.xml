@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/itemNone"
+        android:title="None"/>
+    <item
+        android:id="@+id/itemNormal"
+        android:title="일반지도"/>
+    <item
+        android:id="@+id/itemHybrid"
+        android:title="위성지도"/>
+    <item
+        android:id="@+id/itemSatellite"
+        android:title="위성지도2"/>
+    <item
+        android:id="@+id/itemTerrain"
+        android:title="지형지도"/>
+</menu>

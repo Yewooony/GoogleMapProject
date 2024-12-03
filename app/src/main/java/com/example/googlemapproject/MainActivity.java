@@ -2,6 +2,9 @@ package com.example.googlemapproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,6 +15,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 액션바 타이틀 설정
+        getSupportActionBar().setTitle("YW's GoogleMap");
+
+        // 바텀 네비바 설정
         bottomNavigationView = findViewById(R.id.bottom_navigation_view);
         setBottomNavigationView();
 
@@ -23,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // 바텀네비게이션 바
     private void setBottomNavigationView() {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
