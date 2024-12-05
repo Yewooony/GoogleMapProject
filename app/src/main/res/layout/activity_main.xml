@@ -43,6 +43,15 @@
 
     </androidx.cardview.widget.CardView>
 
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintTop_toBottomOf="@id/searchBarCard" />
+
     <!-- 주소 표시 영역 -->
     <LinearLayout
         android:id="@+id/addressView"
@@ -51,8 +60,8 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:visibility="gone"
-        android:background="@android:color/transparent"
-        app:layout_constraintTop_toBottomOf="@id/searchBarCard">
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView">
 
         <TextView
             android:id="@+id/addressTextView"
@@ -76,15 +85,6 @@
             android:clickable="true"
             android:focusable="true" />
     </LinearLayout>
-
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
-        app:layout_constraintTop_toBottomOf="@id/addressView" />
 
     <!-- 하단 내비게이션 -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
