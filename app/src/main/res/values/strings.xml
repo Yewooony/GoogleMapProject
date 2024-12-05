@@ -1,3 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">GoogleMapProject</string>
+    <string name="app_name">지도 앱</string>
+    <string name="search_hint">여기서 장소 검색</string>
+    <string name="favorite_added">즐겨찾기에 추가되었습니다</string>
+    <string name="favorite_removed">즐겨찾기가 해제되었습니다</string>
+    <string name="nav_art">미술관</string>
+    <string name="nav_cafe">카페</string>
+    <string name="nav_gym">체육시설</string>
+    <string name="nav_library">도서관</string>
+    <string name="nav_restaurant">식당</string>
+    <string name="nav_tourist">관광지</string>
 </resources>

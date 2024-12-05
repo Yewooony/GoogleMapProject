@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_library"
+        android:icon="@drawable/ic_library"
+        android:title="도서관" />
+    <item
+        android:id="@+id/nav_restaurant"
+        android:icon="@drawable/ic_restaurant"
+        android:title="식당" />
+    <item
+        android:id="@+id/nav_cafe"
+        android:icon="@drawable/ic_cafe"
+        android:title="카페" />
+    <item
+        android:id="@+id/nav_sports"
+        android:icon="@drawable/ic_sports"
+        android:title="체육시설" />
+    <item
+        android:id="@+id/nav_museum"
+        android:icon="@drawable/ic_museum"
+        android:title="미술관" />
+</menu>
