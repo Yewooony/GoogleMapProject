@@ -3,6 +3,7 @@ package com.example.googlemapproject;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         // 툴바 설정 설정
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.ic_logo);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.darkblue)));
+        setTitle("  경기도 지도 앱");
 
         // Initialize helpers
         csvHelper = new CsvHelper(this);
