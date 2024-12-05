@@ -138,16 +138,39 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
 
-        // Setup marker click listener
         mMap.setOnMarkerClickListener(marker -> {
+            // 마커의 정보 창을 표시합니다
             marker.showInfoWindow();
+            binding.favorite.setImageResource(R.drawable.ic_star_border);
+
+            // markers Map에서 해당 마커에 연결된 Place 객체를 가져옵니다
             Place place = markers.get(marker);
+
             if (place != null) {
+                // 주소 표시 영역을 보이게 만들고 주소를 설정합니다
+                binding.addressView.setVisibility(View.VISIBLE);
                 binding.addressTextView.setText(place.getAddress());
-                binding.addressTextView.setVisibility(View.VISIBLE);
-                return true;
+
+                // 즐겨찾기 버튼에 클릭 리스너를 설정합니다
+                binding.favorite.setOnClickListener(v -> {
+                    // 즐겨찾기 아이콘을 채워진 별로 변경합니다
+                    binding.favorite.setImageResource(R.drawable.ic_star);
+
+                    // 사용자에게 즐겨찾기 추가를 알리는 토스트 메시지를 표시합니다
+                    Toast.makeText(
+                            this,
+                            "즐겨찾기에 추가되었습니다.",
+                            Toast.LENGTH_SHORT
+                    ).show();
+
+                    // 필요하다면 여기에 즐겨찾기 데이터를 저장하는 로직을 추가할 수 있습니다
+                    // 예: saveToFavorites(place);
+                });
+
+                return true; // 이벤트가 처리되었음을 알립니다
             }
-            return false;
+
+            return false; // Place가 null인 경우 기본 동작을 실행합니다
         });
 
         // Check location permission
